@@ -16,10 +16,12 @@ public class RequestUtil {
         for(String name : properties.keySet()){
             name = name.toString();
             values = properties.get(name);
+
             if(values == null || values.length <= 0){
                 continue;
             }
             returnMap.put(name, values[0].toString());
+
         }
         return format(returnMap);
     }
