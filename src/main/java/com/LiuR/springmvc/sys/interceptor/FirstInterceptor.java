@@ -1,5 +1,7 @@
 package com.LiuR.springmvc.sys.interceptor;
 
+import com.LiuR.springmvc.sys.listener.UserSessionInfo;
+import com.LiuR.springmvc.test.entity.User;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -21,8 +23,8 @@ public class FirstInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object arg2) throws Exception {
-        Object admin = request.getSession().getAttribute("admin");
-        if (admin != null) {
+        User user = UserSessionInfo.getCurrentUser();
+        if (user != null) {
             return true;
         } else {
             response.sendRedirect("../login.jsp");
