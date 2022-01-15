@@ -1,8 +1,10 @@
 package com.LiuR.springmvc.test.controller;
 
 import com.LiuR.springmvc.sys.util.RequestUtil;
+import com.LiuR.springmvc.test.entity.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Map;
 
@@ -30,5 +32,11 @@ public class HelloController {
     @RequestMapping("tosubmit")
     public String toSubmit(){
         return "submit";
+    }
+
+    @RequestMapping("testjackson")
+    @ResponseBody
+    public User testJackson(){
+        return new User(1001,"admin","男",20);
     }
 }

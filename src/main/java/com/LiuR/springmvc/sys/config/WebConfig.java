@@ -10,7 +10,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import java.util.Properties;
 
 @Configuration
-@ComponentScan("com.LiuR.springmvc.controller")
+@ComponentScan("com.LiuR.springmvc.*.controller")
 @EnableWebMvc//开启mvc注解驱动
 public class WebConfig implements WebMvcConfigurer {
 
