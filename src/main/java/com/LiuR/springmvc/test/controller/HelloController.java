@@ -23,7 +23,7 @@ public class HelloController {
         String s = parameterMap.get("name");
         System.out.println(name);
         System.out.println("name:" + s);
-        
+
         return "index";
     }
 
